@@ -12,6 +12,7 @@ export enum UserRole {
   PO = 'Proyect Owner',
   DESARROLLADOR = 'DESARROLLADOR',
   ANALISTA_FUNCIONAL = 'ANALISTA FUNCIONAL',
+  EXTERNO = 'EXTERNO',
 }
 
 @Entity()

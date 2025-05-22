@@ -9,9 +9,12 @@ import {
 import { User } from 'src/users/user.entity';
 
 export enum TaskStatus {
-  PENDIENTE = 'PENDIENTE',
-  EN_PROGRESO = 'EN_PROGRESO',
-  COMPLETADA = 'COMPLETADA',
+  SIN_ASIGNAR = 'SIN ASIGNAR',
+  ASIGNADA = 'ASIGNADA',
+  Analisis = 'ANALISIS',
+  DESARROLLO = 'DESARROLLO',
+  HOMOLOGACION = 'HOMOLOGACION',
+  PRODUCCION = 'PRODUCCION',
 }
 
 @Entity()
@@ -31,7 +34,7 @@ export class Task {
   @Column()
   description: string;
 
-  @Column({ type: 'enum', enum: TaskStatus, default: TaskStatus.PENDIENTE })
+  @Column({ type: 'enum', enum: TaskStatus, default: TaskStatus.SIN_ASIGNAR })
   status: TaskStatus;
 
   @ManyToOne(() => User, (user) => user.id)
